@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <div id="form_top" class="form-container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <div class="form-title">Анкета подопечного фонда</div>
+                <div class="form-description">«Мы выступаем как один»</div>
+            </div>
+            <div class="divider"></div>
+            <div class="form-content">
+                <div class="form-info">Знаком <small class="required-text">*</small> в анкете отмечены ОБЯЗАТЕЛЬНЫЕ для
+                    ответа
+                    заявителем
+                    вопросы.</div>
+                <form id="form" class="form" action="" method="post">
+                    <input type="hidden" name="title_input" value="Анкета подопечного фонда «Мы выступаем как один»" readonly hidden>
+                    <div class="form-page-counter-box">
+                        <div class="form-page-counter">
+                            <strong id="form_page_current" class="form-page-current">1</strong>/<span
+                                id="form_page_total" class="form-page-total">6</span>
+                        </div>
+                        <div id="form_page_title" class="form-page-title">Личная информация</div>
+                    </div>
+                    <div id="form_page_main" class="form-page-main">
+                        <div class="floating-label">
+                            <input type="text" name="surname_input" id="surname_input" class="field input" required>
+                            <label for="surname_input">Фамилия <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="name_input" id="name_input" class="field input" required>
+                            <label for="name_input">Имя <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="patronymic_input" id="patronymic_input" class="field input">
+                            <label for="patronymic_input">Отчество <small class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="genger_select" id="genger_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                            <label for="genger_select">Пол <small class="required-text"></small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="date" name="date_input" id="date_input" class="field date" required>
+                            <label for="date_input">Дата рождения <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div id="floating_parent" class="floating-label floating-parent">
+                            <input type="text" name="parent_input" id="parent_input" class="field input">
+                            <label for="parent_input">ФИО законного представителя <small
+                                    class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="citizenship_select" id="citizenship_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="rf">РФ</option>
+                                <option value="cis">СНГ (вне РФ)</option>
+                                <option value="other_contries">Иные страны</option>
+                            </select>
+                            <label for="citizenship_select">Гражданство <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="family_select" id="family_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="married">Женат/замужем</option>
+                                <option value="not_married">Не женат/не замужем</option>
+                                <option value="divorced">Раведен(-а)</option>
+                                <option value="widow_widower">Вдовец/вдова</option>
+                                <option value="other_family">Другое</option>
+                                <option value="not_specified">Не указано</option>
+                            </select>
+                            <label for="family_select">Семейное положение <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="country_input" id="country_input" class="field country" required>
+                            <label for="country_input">Страна проживания <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="city_input" id="city_input" class="field input" required>
+                            <label for="city_input">Город фактического проживания <small
+                                    class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="active_sport_select" id="active_sport_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="active_sport_select">Являетесь ли Вы действующим спортсменом? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="kind_sport_input" id="kind_sport_input" class="field input">
+                            <label for="kind_sport_input">Если да, укажите, представителем какого вида спорта Вы
+                                являетесь
+                                <small class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="f_category_sport" id="category_sport_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="category_sport_select">Имеете ли Вы спортивный разряд или звание? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="category_sport_input" id="category_sport_input"
+                                class="field input">
+                            <label for="category_sport_input">Если да, укажите, то какой (-ое)? <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="suspension_sport_select" id="suspension_sport_select" class="field select"
+                                required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="suspension_sport_select">Подвергались ли Вы отстранению от соревнований со
+                                стороны
+                                по
+                                неспортивным причинам? <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="suspension_sport_input" id="suspension_sport_input"
+                                class="field input">
+                            <label for="suspension_sport_input">Если да, расскажите, на каком уровне и в каком виде
+                                спорта
+                                <small class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="continue_sport_select" id="continue_sport_select" class="field select"
+                                required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="continue_sport_select">Планируете ли Вы продолжение спортивной карьеры на
+                                профессиональном уровне? <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="advertising_select" id="advertising_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="advertising_select">Есть ли у вас действующие/завершенные рекламные контракты?
+                                <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="advertising_input" id="advertising_input" class="field input">
+                            <label for="advertising_input">Если да, то с какой (-ими) компанией? <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="disability_select" id="disability_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="disability_select">Наличие инвалидности <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="care_select" id="care_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="care_select">Опекает ли Вас в настоящее время какой-либо фонд/иная
+                                благотворительная
+                                организация? <small class="required-text">*</small></label>
+                                <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="care_input" id="care_input" class="field input">
+                            <label for="care_input">Если да, то какой(-ая) и какую помощь вы получаете? <small
+                                    class="required-text"></small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="participation_select" id="participation_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="participation_select">Принимаете ли Вы участие в работе
+                                социальных/общественно-политических или иных организаций? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="participation_input" id="participation_input" class="field input">
+                            <label for="participation_input">Если да, то в каких? <small
+                                    class="required-text"></small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <select name="language_select" id="language_select" class="field select" required>
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="language_select">Владеете ли Вы иностранными языками? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="language_input" id="language_input" class="field input">
+                            <label for="language_input">Если да, то какими? <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div id="help_multiple_select" class="floating-label multiple">
+                            <select name="help_select" id="help_select" class="field select" multiple required>
+                                <option value="edu"
+                                    title="Получение дополнительного образования, профессиональная переподготовка, приобретение новой специальности">
+                                    Получение дополнительного образования, профессиональная переподготовка, приобретение
+                                    новой специальности</option>
+                                <option value="work" title="Помощь с трудоустройством">Помощь с трудоустройством
+                                </option>
+                                <option value="legal" title="Получение юридической консультации">Получение юридической
+                                    консультации</option>
+                                <option value="psycholog" title="Получение психологической поддержки">Получение
+                                    психологической поддержки</option>
+                            </select>
+                            <label for="help_select">Какую помощь Вы бы хотели получить в рамках Фонда «Мы выступаем как
+                                один»?
+                                <small class="required-text">*</small>
+                                <div class="inactive-text">Выделите нужное:</div>
+                            </label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="email" name="email_input" id="email_input" class="field email" required>
+                            <label for="email_input">E-mail <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="tel" name="phone_input" id="phone_input" class="field phone" maxlength="11"
+                                required>
+                            <label for="phone_input">Телефон <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="url" name="url_social_input" id="url_social_input" class="field link"
+                                required>
+                            <label for="url_social_input">Ссылки на аккаунты в социальных сетях <small
+                                    class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                    </div>
+                    <div id="form_page_education" class="form-page-education">
+                        <div class="floating-label required">
+                            <select name="edu_select" id="edu_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="higher_edu">Высшее</option>
+                                <option value="in_higher_edu">Неоконченное высшее</option>
+                                <option value="secondary_edu">Среднее</option>
+                                <option value="other_edu">Другое</option>
+                            </select>
+                            <label for="edu_select">Уровень Вашего образования <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <input type="text" name="edu_input" id="edu_input" class="field edu">
+                            <label for="edu_input">Укажите образовательное учреждение, которое Вы окончили/в котором
+                                обучались
+                                <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <input type="text" name="special_input" id="special_input" class="field input">
+                            <label for="special_input">Ваша специальность <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <input type="text" name="edu_interest_input" id="edu_interest_input" class="field input">
+                            <label for="edu_interest_input">В получении дополнительного образования/профессиональных
+                                навыков
+                                в
+                                какой области Вы заинтересованы? <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="edu_continue_select" id="edu_continue_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="edu_continue_select">Продолжаете ли Вы в настоящее время процесс обучения или
+                                получаете
+                                дополнительное образование/новую специальность? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="edu_continue_input" id="edu_continue_input" class="field input">
+                            <label for="edu_continue_input">Если да, то какое (-ую)? <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                    </div>
+                    <div id="form_page_work" class="form-page-work">
+                        <div class="floating-label required">
+                            <select name="work_search_select" id="work_search_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="work_search_select">Находитесь ли Вы в настоящее время в поиске работы? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="work_current_input" id="work_current_input"
+                                class="field current-work">
+                            <label for="work_current_input">Текущее место работы при наличии <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="work_change_select" id="work_change_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="work_change_select">Хотели бы Вы сменить сферу профессиональной деятельности?
+                                <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="work_change_input" id="work_change_input" class="field input">
+                            <label for="work_change_input">Если да, то в какой сфере вы хотели бы развиваться? <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                    </div>
+                    <div id="form_page_legal" class="form-page-legal">
+                        <div class="floating-label required">
+                            <input type="text" name="legal_consult_input" id="legal_consult_input" class="field input">
+                            <label for="legal_consult_input">По какому вопросу (-ам) Вы хотели бы получить юридическую
+                                консультацию? <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="legal_consult_select" id="legal_consult_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="legal_consult_select">Получаете ли Вы в настоящее время юридические консультации
+                                по
+                                вопросам продолжения спортивной карьеры? <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="legal_get_select" id="legal_get_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="legal_get_select">Обращались ли Вы в какие-либо другие организации для получения
+                                юридических консультаций? <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="legal_get_input" id="legal_get_input" class="field input">
+                            <label for="legal_get_input">Если да, то в какие? <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                    </div>
+                    <div id="form_page_psycholog" class="form-page-psycholog">
+                        <div class="floating-label required">
+                            <select name="psycholog_interact_select" id="psycholog_interact_select"
+                                class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="yes">Да</option>
+                                <option value="no">Нет</option>
+                            </select>
+                            <label for="psycholog_interact_select">Был ли у вас опыт взаимодействия со спортивным
+                                психологом
+                                ранее? <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="psycholog_success_select" id="psycholog_success_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="yes">Да</option>
+                                <option value="no">Нет</option>
+                                <option value="difficult">Затрудняюсь ответить</option>
+                            </select>
+                            <label for="psycholog_success_select">Удалось ли вам решить проблему/запрос? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="psycholog_get_select" id="psycholog_get_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="yes">Да</option>
+                                <option value="no">Нет</option>
+                            </select>
+                            <label for="psycholog_get_select">Получаете ли Вы в настоящее время психологическую
+                                поддержку/работаете с психологом? <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="trainig_continue_select" id="trainig_continue_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="yes">Да</option>
+                                <option value="no">Нет</option>
+                                <option value="other">Другое</option>
+                            </select>
+                            <label for="trainig_continue_select">Продолжаете ли Вы тренировки на момент подачи данной
+                                заявки?
+                                <small class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label other">
+                            <input type="text" name="trainig_continue_input" id="trainig_continue_input"
+                                class="field input">
+                            <label for="trainig_continue_input">Другое <small class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label required">
+                            <select name="help_get_select" id="help_get_select" class="field select">
+                                <option value="" selected disabled hidden></option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            <label for="help_get_select">Обращались ли Вы в какие-либо другие фонды/благотворительные
+                                организации для получения психологической поддержки? <small
+                                    class="required-text">*</small></label>
+                            <span class="btn-clear">×</span>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="floating-label">
+                            <input type="text" name="help_get_input" id="help_get_input" class="field input">
+                            <label for="help_get_input">Если да, то в какие? <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                    </div>
+                    <div id="form_page_docs" class="form-page-docs">
+                        <div class="form-field-file">
+                            <input type="file" name="doc_passport_input" id="doc_passport_input" class="file"
+                                multiple required
+                                accept="image/*,.jpeg,.png,.ico,application/pdf,application/msword,text/csv,text/plain,application/vnd.*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx,.csv,.vsd,.vsdx">
+                            <label for="doc_passport_input">Прикрепите скан первого разворота паспорта и страницы с
+                                регистрацией
+                                <small class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="form-field-file">
+                            <input type="file" name="doc_sport_input" id="doc_sport_input" class="file" multiple
+                                required
+                                accept="image/*,.jpeg,.png,.ico,application/pdf,application/msword,text/csv,text/plain,application/vnd.*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx,.csv,.vsd,.vsdx">
+                            <label for="doc_sport_input">Прикрепите сканы документов, подтверждающих Ваши спортивные
+                                достижения:
+                                дипломы, членские удостоверения, лицензии и т.д. <small
+                                    class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="form-field-file">
+                            <input type="file" name="doc_health_input" id="doc_health_input" class="file" multiple
+                                accept="image/*,.jpeg,.png,.ico,application/pdf,application/msword,text/csv,text/plain,application/vnd.*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx,.csv,.vsd,.vsdx">
+                            <label for="doc_health_input">Прикрепите сканы документов (при наличии), подтверждающих
+                                особенности
+                                Вашего здоровья: справка об инвалидности, медицинская выписка и т.д. <small
+                                    class="required-text"></small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                        </div>
+                        <div class="form-field-checkbox">
+                            <input type="checkbox" name="privacy_policy_checkbox" id="privacy_policy_checkbox"
+                                class="checkbox" required>
+                            <label for="privacy_policy_checkbox">Нажимая на кнопку, я принимаю <span id="privacy_policy"
+                                    class="privacy-policy">условия соглашения</span>. <small
+                                    class="required-text">*</small></label>
+                            <div class="empty-message">Поле обязательно для заполнения</div>
+                            <div class="form-info">
+                                Если Ваша заявка будет одобрена, мы попросим Вас предъявить оригиналы прикрепленных
+                                документов.
+                            </div>
+                        </div>
+                    </div>
+                    <div id="form_message" class="form-message"></div>
+                    <div class="btn-group">
+                        <button type="button" id="btn_page_back" class="btn-page-back">Назад</button>
+                        <button type="button" id="btn_page_next" class="btn-page-next">Далее</button>
+                        <button type="submit" id="btn_page_send" class="btn-page-send">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="alert_dialog" class="form-alert">
+        <div class="alert-dialog">
+            <div class="alert-dialog-content">
+                <div class="alert-dialog-message">
+                    Фонд «Мы выступаем как один» оказывает поддержку спортсменам, которые были отстранены от
+                    соревнований по неспортивным причинам
+                </div>
+                <div class="alert-dialog-confirm">
+                    <button type="button" id="alert_dialog_ok" class="alert-dialog-ok">Ок</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="modal_dialog" class="form-modal">
+        <div class="form-modal-dialog">
+            <div class="form-modal-content">
+                <div class="form-modal-header">
+                    <div class="form-modal-title">Политика конфиденциальности</div>
+                    <button type="button" id="modal_close" class="form-modal-close">×</button>
+                </div>
+                <div id="modal_main" class="form-modal-main">
+                    <div class="form-modal-text">
+                        Текст соглашения на обработку данных: <br>
+                        Настоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года Вы подтверждаете свое согласие на обработку компанией <КОМПАНИЯ> персональных данных: сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование, передачу исключительно в целях продажи программного обеспечения на Ваше имя, как это описано ниже, блокирование, обезличивание, уничтожение. 
+                        <br>
+                        Компания <КОМПАНИЯ> гарантирует конфиденциальность получаемой информации. Обработка персональных данных осуществляется в целях эффективного исполнения заказов, договоров и иных обязательств, принятых компанией <КОМПАНИЯ> в качестве обязательных к исполнению. 
+                        <br>
+                        В случае необходимости предоставления Ваших персональных данных правообладателю, дистрибьютору или реселлеру программного обеспечения в целях регистрации программного обеспечения на ваше имя, вы даёте согласие на передачу ваших персональных данных. Компания <КОМПАНИЯ> гарантирует, что правообладатель, дистрибьютор или реселлер программного обеспечения осуществляет защиту персональных данных на условиях, аналогичных изложенным в Политике конфиденциальности персональных данных. 
+                        <br>
+                        Настоящее согласие распространяется на следующие Ваши персональные данные: фамилия, имя и отчество, адрес электронной почты, почтовый адрес доставки заказов, контактный телефон, платёжные реквизиты. 
+                        <br>
+                        Срок действия согласия является неограниченным. Вы можете в любой момент отозвать настоящее согласие, направив письменное уведомления на адрес: 000000, г. <ГОРОД>, ул. <УЛИЦА>, д. <ДОМ>, офис <ОФИС> с пометкой «Отзыв согласия на обработку персональных данных». 
+                        <br>
+                        Обращаем ваше внимание, что отзыв согласия на обработку персональных данных влечёт за собой удаление Вашей учётной записи с Интернет-сайта (вашсайт), а также уничтожение записей, содержащих ваши персональные данные, в системах обработки персональных данных компании <КОМПАНИЯ>, что может сделать невозможным пользование интернет-сервисами компании <КОМПАНИЯ>. 
+                        <br>
+                        Гарантирую, что представленная мной информация является полной, точной и достоверной, а также что при представлении информации не нарушаются действующее законодательство Российской Федерации, законные права и интересы третьих лиц. Вся представленная информация заполнена мною в отношении себя лично. 
+                        <br>
+                        Настоящее согласие действует в течение всего периода хранения персональных данных, если иное не предусмотрено законодательством Российской Федерации.
+                        <br>
+                    </div>
+                </div>
+                <div class="form-modal-footer">
+                    <button type="button" id="modal_scroll_btn" class="btn-modal-scroll">
+                        <div>Прочитайте до конца</div>
+                        <div>↓</div>
+                    </button>
+                    <div id="modal_btn_goup" class="form-modal-btn-goup">
+                        <button type="button" id="modal_ok" class="btn-modal-ok">Принять</button>
+                        <button type="button" id="modal_cancel" class="btn-modal-cancel">Отклонить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+
+</html>
